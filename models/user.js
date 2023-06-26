@@ -9,7 +9,7 @@ const orderSchema = new Schema ({
   },
   is_paid: Boolean
 }, {
-  timest
+  timestamps: true
 })
 
 const SALT_ROUNDS = 6;
