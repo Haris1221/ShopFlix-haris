@@ -12,10 +12,11 @@ const options = {
     }
 };
 
+
 try {
-    const res = await fetch(url, options);
-    const result = await res.json();
-    console.log(result);
+    const rizz = await fetch(url, options);
+    const result = await rizz.json();
+     res.json(result)
 } catch (error) {
     console.error(error);
 }
