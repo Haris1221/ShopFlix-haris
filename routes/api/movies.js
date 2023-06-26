@@ -4,3 +4,4 @@ const moviesCtrl = require('../../controllers/api/movies')
 
 router.get('/', moviesCtrl.indexMovie)
 
+module.exports = router
