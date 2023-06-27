@@ -2,13 +2,13 @@
 .first{
     display: flex;
     gap:10px;
-    height: auto;
-    width: auto;
+    height: 700px;
+    width: 6000px;
     flex-wrap: nowrap;
     overflow-y: scroll;
 }
 .movie{
-    height: 200px;
+    height: 400px;
     width: 500px;
     background-size: cover;
     background-color: yellow;
