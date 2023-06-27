@@ -14,10 +14,9 @@ export default function Movies() {
   return (
     <div className='first'>
         {movies.map((movie,i)=>{
-            return <div key={i} className='movie' style={{backgroundImage:`url("https://www.themoviedb.org/t/p/original${movie.poster_path}")`}}>{movie.title}
+            return <div key={i} className='movie' style={{backgroundImage:`url("https://www.themoviedb.org/t/p/original${movie.poster_path}")`}}/>
+                {/* {movie.title} */}
             
-            
-            </div>
         })}
     </div>
   )

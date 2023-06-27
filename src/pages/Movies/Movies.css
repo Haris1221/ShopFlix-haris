@@ -1,14 +1,16 @@
-.movie{
-    height: 100px;
-    width: 300px;
-    background-size: cover;
-}
+
 .first{
     display: flex;
     gap:10px;
-    overflow-x: scroll;
-    width: 90vw;
+    width: 2000px;
     justify-content: center;
     align-items: center;
-    margin: 0auto;
+    overflow: visible;
+    overflow-x: scroll;
+}
+.movie{
+    height: 40vh;
+    width: 500px;
+    background-size: cover;
+    background-color: yellow;
 }
