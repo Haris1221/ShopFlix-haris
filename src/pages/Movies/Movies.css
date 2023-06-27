@@ -2,15 +2,18 @@
 .first{
     display: flex;
     gap:10px;
-    width: 2000px;
-    justify-content: center;
-    align-items: center;
-    overflow: visible;
-    overflow-x: scroll;
+    height: auto;
+    width: auto;
+    flex-wrap: nowrap;
+    overflow-y: scroll;
 }
 .movie{
-    height: 40vh;
+    height: 200px;
     width: 500px;
     background-size: cover;
     background-color: yellow;
+}
+.second{
+    display: flex;
+    height: 400px;
 }

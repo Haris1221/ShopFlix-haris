@@ -11,30 +11,13 @@ export default function Movies() {
         getMo()
 
     },[])
-<<<<<<< HEAD
-    return (
-        <div className="first">
-        {movies.length > 0 ? (
-          movies.map((movie, i) => (
-            <div key={i}>{movie.original_title}</div>
-          ))
-        ) : (
-          <h1>Loading...</h1>
-        )}
-      </div>
-      
-
-    );
-
-=======
   return (
     <div className='first'>
+      <div className='second'>
         {movies.map((movie,i)=>{
             return <div key={i} className='movie' style={{backgroundImage:`url("https://www.themoviedb.org/t/p/original${movie.poster_path}")`}}/>
-                {/* {movie.title} */}
-            
         })}
+        </div>
     </div>
   )
->>>>>>> main
 }
