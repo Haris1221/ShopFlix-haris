@@ -16,7 +16,7 @@ export default function App() {
             <MenuBar/>
             <NavBar user={user} setUser={setUser} />
             <Routes>
-              <Route path='/movies' element={<Movies/>}/>
+              <Route path='/' element={<Movies/>}/>
               {/* Route components in here */}
               {/* <Route path="/orders/new" element={<NewOrderPage />} />
               <Route path="/orders" element={<OrderHistoryPage />} /> */}
