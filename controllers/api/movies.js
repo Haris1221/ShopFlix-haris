@@ -75,6 +75,7 @@ const data={
           .then((john) => {
             data.g= [...john.results] 
             res.json(data)
+            res.status(200,'Amazing')
            
           })
           .catch((err) => console.error("error:" + err));
