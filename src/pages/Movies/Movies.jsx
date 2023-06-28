@@ -31,7 +31,7 @@ export default function Movies() {
               <div className='gradient'/>
              </div>
              <div className="firstScroll"> 
-             <h2>Trending</h2> 
+             <h2 className='h2'>Trending</h2> 
       <div className="first">
         {movies.a?movies.a.map((movie, i) => {
           return (
@@ -46,7 +46,7 @@ export default function Movies() {
         }):<></>}
       </div>
       </div>
-     <h2>Top Rated</h2>
+     <h2 className='h2'>Top Rated</h2>
      <div className="secondScroll"> 
       <div className="second">
         {movies.b?movies.b.map((movie, i) => {
@@ -62,7 +62,7 @@ export default function Movies() {
         }):<></>}
       </div>
       </div>
-      <h2>Now Playing</h2>
+      <h2 className='h2'>Now Playing</h2>
       <div className="secondScroll"> 
       <div className="second">
         {movies.c?movies.c.map((movie, i) => {
@@ -78,7 +78,7 @@ export default function Movies() {
         }):<></>}
       </div>
       </div>
-       <h2>Sci-fi Movies</h2>
+       <h2 className='h2'>Sci-fi Movies</h2>
        <div className="secondScroll"> 
       <div className="second">
         {movies.d?movies.d.map((movie, i) => {
@@ -94,7 +94,7 @@ export default function Movies() {
         }):<></>}
       </div>
       </div>
-      <h2>Action Movies</h2>
+      <h2 className='h2'>Action Movies</h2>
       <div className="secondScroll"> 
       <div className="second">
         {movies.e?movies.e.map((movie, i) => {
@@ -110,7 +110,7 @@ export default function Movies() {
         }):<></>}
       </div>
       </div>
-      <h2>Comedy Movies</h2>
+      <h2 className='h2'>Comedy Movies</h2>
       <div className="secondScroll"> 
       <div className="second">
         {movies.f?movies.f.map((movie, i) => {
@@ -126,7 +126,7 @@ export default function Movies() {
         }):<></>}
       </div>
       </div>
-      <h2>Horror Movies</h2>
+      <h2 className='h2'>Horror Movies</h2>
       <div className="secondScroll"> 
       <div className="second">
         {movies.g?movies.g.map((movie, i) => {
