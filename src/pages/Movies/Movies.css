@@ -96,5 +96,23 @@
   .movie1:hover{
     transform: scale(1.09);
   }
-  
-  
+
+.popup {
+    width: 80%;
+    height: 80%;
+    position: fixed;
+    top: 100px;
+    left: 100px;
+    background-color: rgba(0, 0, 0, 0.834);
+    z-index: 2;
+    display: none;
+    padding: 20px;
+    flex-direction: column;
+}
+.movieTitle{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+    font-size: 50px;
+}
