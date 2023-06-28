@@ -16,7 +16,7 @@ export default function NavBar({ user, setUser }) {
       
       <div className='navItem'>
       
-      <Link to="/orders"><p>🎥  &nbsp; &nbsp; &nbsp; Browse</p></Link>
+      <Link to="/movies"><p>🎥  &nbsp; &nbsp; &nbsp; Browse</p></Link>
       <Link to="/"><p>📈  &nbsp; &nbsp; &nbsp; Trending</p></Link>
       <Link to="/"><p>👀  &nbsp; &nbsp; &nbsp; Upcoming</p></Link>
       <Link to="/"><p>🔎  &nbsp; &nbsp; &nbsp; Search</p></Link>
