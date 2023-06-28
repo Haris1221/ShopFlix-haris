@@ -5,13 +5,14 @@ export default function Movies() {
     const [rands,setRand]=useState(Math.floor(Math.random()*20))
   const [description,setD]=useState('')
   const [movi,setMovi]=useState('')
-    const [movies, setMovies]= useState([])
+    const [movies, setMovies]= useState({})
     useEffect(()=>{
         async function getMo(){
-            const movies = await getMovies()
-            setMovies(movies)
-            setMovi(movies.a[rands])
-            setD(movies.a[rands].overview.slice(0,150))
+            const movis = await getMovies()
+            setMovies({...movies, a:movis.a, b:movis.b, c:movis.c, d:movis.d, e:movis.e, f:movis.e, g:movis.g})
+            console.log(movis)
+            setMovi(movis.a[rands])
+            setD(movis.a[rands].overview.slice(0,150))
         }
         getMo()
 
@@ -29,9 +30,9 @@ export default function Movies() {
               </div>
               <div className='gradient'/>
              </div>
-             
+             <div className="firstScroll">  
       <div className="first">
-        {movies.a.map((movie, i) => {
+        {movies.a?movies.a.map((movie, i) => {
           return (
             <div
               key={i}
@@ -41,11 +42,13 @@ export default function Movies() {
               }}
             />
           );
-        })}
+        }):<></>}
       </div>
-      <h2>Top Rated</h2>
+      </div>
+     <h2>Top Rated</h2>
+     <div className="secondScroll"> 
       <div className="second">
-        {movies.b.map((movie, i) => {
+        {movies.b?movies.b.map((movie, i) => {
           return (
             <div
               key={i}
@@ -55,11 +58,13 @@ export default function Movies() {
               }}
             />
           );
-        })}
+        }):<></>}
+      </div>
       </div>
       <h2>Now Playing</h2>
-      <div className="third">
-        {movies.c.map((movie, i) => {
+      <div className="secondScroll"> 
+      <div className="second">
+        {movies.c?movies.c.map((movie, i) => {
           return (
             <div
               key={i}
@@ -69,11 +74,13 @@ export default function Movies() {
               }}
             />
           );
-        })}
+        }):<></>}
       </div>
-      <h2>Sci-fi Movies</h2>
-      <div className="third">
-        {movies.d.map((movie, i) => {
+      </div>
+       <h2>Sci-fi Movies</h2>
+       <div className="secondScroll"> 
+      <div className="second">
+        {movies.d?movies.d.map((movie, i) => {
           return (
             <div
               key={i}
@@ -83,11 +90,13 @@ export default function Movies() {
               }}
             />
           );
-        })}
+        }):<></>}
+      </div>
       </div>
       <h2>Action Movies</h2>
-      <div className="third">
-        {movies.e.map((movie, i) => {
+      <div className="secondScroll"> 
+      <div className="second">
+        {movies.e?movies.e.map((movie, i) => {
           return (
             <div
               key={i}
@@ -97,11 +106,13 @@ export default function Movies() {
               }}
             />
           );
-        })}
+        }):<></>}
+      </div>
       </div>
       <h2>Comedy Movies</h2>
-      <div className="third">
-        {movies.f.map((movie, i) => {
+      <div className="secondScroll"> 
+      <div className="second">
+        {movies.f?movies.f.map((movie, i) => {
           return (
             <div
               key={i}
@@ -111,11 +122,13 @@ export default function Movies() {
               }}
             />
           );
-        })}
+        }):<></>}
+      </div>
       </div>
       <h2>Horror Movies</h2>
-      <div className="third">
-        {movies.g.map((movie, i) => {
+      <div className="secondScroll"> 
+      <div className="second">
+        {movies.g?movies.g.map((movie, i) => {
           return (
             <div
               key={i}
@@ -125,8 +138,9 @@ export default function Movies() {
               }}
             />
           );
-        })}
+        }):<></>}
       </div>
+      </div> 
     </div>
   )
 }

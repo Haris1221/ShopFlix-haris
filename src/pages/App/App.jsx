@@ -5,6 +5,7 @@ import './App.css';
 import AuthPage from '../AuthPage/AuthPage';
 import NavBar from '../../components/NavBar/NavBar';
 import Movies from '../Movies/Movies'
+import MenuBar from '../../components/MenuBar/MenuBar';
 export default function App() {
   const [user, setUser] = useState(getUser());
 
@@ -12,6 +13,7 @@ export default function App() {
     <main className="">
       { user ?
           <>
+            <MenuBar/>
             <NavBar user={user} setUser={setUser} />
             <Routes>
               <Route path='/movies' element={<Movies/>}/>

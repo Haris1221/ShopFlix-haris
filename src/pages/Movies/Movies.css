@@ -1,23 +1,98 @@
 
-.first {
-    display: flex;
-    gap:10px;
-    height: 700px;
-    width: 6000px;
-    flex-wrap: nowrap;
-    overflow-y: scroll;
+
+.firstScroll{
+    width: 100%;
+    overflow-x: scroll;
+    overflow-y: hidden;
 }
-.movie{
-    background-size: cover;
-    width: 6000px;
-    height: 400px;
+.firstScroll::-webkit-scrollbar {
+    display: none;
+}
+.secondScroll{
+    width: 100%;
+    overflow-x: scroll;
+    overflow-y: hidden;
+}
+.secondScroll::-webkit-scrollbar {
+    display: none;
+}
+.gradient{
+    height: 118px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0), rgba(28, 30, 31, 0.61), rgb(13, 14, 14));
+  }
+  .first {
+    display: flex;
+    width: 4000px;
+    flex-wrap: nowrap;
+    gap: 10px;
+    margin-top: 10px;
+  
+  }
+  .second {
+    display: flex;
+    width: 8000px;
+    flex-wrap: nowrap;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  .third {
+    margin-top: 10px;
+    display: flex;
+    width: 8000px;
     flex-wrap: nowrap;
     gap: 10px;
   }
   .movie {
-    background-color: yellow;
-    width: 400px;
-    height: 600px;
     background-size: cover;
+    width: 200px;
+    height: 300px;
+     
   }
+  
+  .movie1 {
+   
+    background-size: cover;
+    width: 266px;
+    height: 160px;
+  }
+  .movieBanner {
+    background-size: cover;
+    position: relative;
+    width: 100%;
+    height: 400px;
+    display: flex;
+    align-items: center;
+   
+  }
+  .bannertext{
+    width:300px;
+    padding: 20px;
+  }
+  .btnDiv{
+    display:flex;
+    gap:10px
+  }
+  button{
+    background-color:rgba(51,51,51,.8);
+    border:none;
+    padding: 10px;
+    width:100px;
+    border-radius: 5px;
+    color:white
+  }
+  button:hover{
+    transform: scale(1.1);
+    background-color:rgba(51,51,51);
+  }
+  
+  .movie:hover{
+    transform: scale(1.1);
+  }
+  .movie1:hover{
+    transform: scale(1.09);
+  }
+  
   
