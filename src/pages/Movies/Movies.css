@@ -1,5 +1,5 @@
 
-.first{
+.first {
     display: flex;
     gap:10px;
     height: 700px;
@@ -8,12 +8,16 @@
     overflow-y: scroll;
 }
 .movie{
-    height: 400px;
-    width: 500px;
     background-size: cover;
-    background-color: yellow;
-}
-.second{
-    display: flex;
+    width: 6000px;
     height: 400px;
-}
+    flex-wrap: nowrap;
+    gap: 10px;
+  }
+  .movie {
+    background-color: yellow;
+    width: 400px;
+    height: 600px;
+    background-size: cover;
+  }
+  
