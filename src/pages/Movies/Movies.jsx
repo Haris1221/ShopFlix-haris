@@ -30,8 +30,9 @@ export default function Movies() {
               </div>
               <div className='gradient'/>
              </div>
-             <div className="firstScroll"> 
              <h2 className='h2'>Trending</h2> 
+             <div className="firstScroll"> 
+             
       <div className="first">
         {movies.a?movies.a.map((movie, i) => {
           return (
