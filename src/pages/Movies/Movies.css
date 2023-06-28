@@ -1,6 +1,14 @@
 
 .first {
     display: flex;
+    gap:10px;
+    height: 700px;
+    width: 6000px;
+    flex-wrap: nowrap;
+    overflow-y: scroll;
+}
+.movie{
+    background-size: cover;
     width: 6000px;
     height: 400px;
     flex-wrap: nowrap;
