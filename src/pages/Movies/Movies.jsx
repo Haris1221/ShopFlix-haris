@@ -1,11 +1,38 @@
 import {useEffect,useState} from 'react'
 import './Movies.css'
 import { getMovies } from '../../utilities/movies-api';
+
+function PopUp({popUp}) {
+  return(
+    <div className='popup'> 
+      <img alt=''/>
+      <div className='movieTitle'>
+      <h2> 
+      {popUp.title} 
+      </h2>
+      <span onClick={()=>{
+      document.querySelector('.popup').style.display = 'none'
+      }}> 
+      X
+      </span>
+      </div>
+      <p className='originalLanguage'>Original Language: {popUp.original_language} &nbsp; &nbsp; {popUp.popularity} &nbsp; &nbsp; Rating: {popUp.vote_average}
+      </p>
+      <p className='overview'>{popUp.overview}</p>
+      <div className='btnDiv'>
+          <button>PLAY</button>
+          <button>MY LIST</button>
+      </div>
+    </div>
+  )
+}
+
 export default function Movies() {
-    const [rands,setRand]=useState(Math.floor(Math.random()*20))
+  const [rands,setRand]=useState(Math.floor(Math.random()*20))
   const [description,setD]=useState('')
   const [movi,setMovi]=useState('')
-    const [movies, setMovies]= useState({})
+  const [movies, setMovies]= useState({})
+  const [popUp, setPopUp] = useState({})
     useEffect(()=>{
         async function getMo(){
             const movis = await getMovies()
@@ -20,6 +47,7 @@ export default function Movies() {
     },[])
   return (
     <div className="App">
+      <PopUp popUp = {popUp} />
       <div className='movieBanner' style={{backgroundImage: `url("https://www.themoviedb.org/t/p/original${movi.backdrop_path}")`}}>
               <div className='bannertext'>
                 <h1>{movi.title}</h1>
@@ -30,15 +58,19 @@ export default function Movies() {
                 <p>{description}...</p>
               </div>
               <div className='gradient'/>
-             </div>
-             <h2 className='h2'>Trending</h2> 
-             <div className="firstScroll"> 
-             
+              </div>
+              <h2 className='h2'>Trending</h2> 
+              <div className="firstScroll"> 
       <div className="first">
         {movies.a?movies.a.map((movie, i) => {
           return (
             <div
               key={i}
+              onClick={()=> {
+                setPopUp({...movie})
+                document.querySelector('.popup').style.display = 'flex'
+                console.log('this is popUp',popUp)
+              }}
               className="movie"
               style={{
                 backgroundImage: `url("https://www.themoviedb.org/t/p/original${movie.poster_path}")`
@@ -54,7 +86,12 @@ export default function Movies() {
         {movies.b?movies.b.map((movie, i) => {
           return (
             <div
-              key={i}
+              key={i} 
+              onClick={()=> {
+                setPopUp({...movie})
+                document.querySelector('.popup').style.display = 'flex'
+                console.log('this is popUp',popUp)
+              }}
               className="movie1"
               style={{
                 backgroundImage: `url("https://www.themoviedb.org/t/p/original${movie.backdrop_path}")`
@@ -71,6 +108,11 @@ export default function Movies() {
           return (
             <div
               key={i}
+              onClick={()=> {
+                setPopUp({...movie})
+                document.querySelector('.popup').style.display = 'flex'
+                console.log('this is popUp',popUp)
+              }}
               className="movie1"
               style={{
                 backgroundImage: `url("https://www.themoviedb.org/t/p/original${movie.backdrop_path}")`
@@ -80,13 +122,19 @@ export default function Movies() {
         }):<></>}
       </div>
       </div>
-       <h2 className='h2'>Sci-fi Movies</h2>
-       <div className="secondScroll"> 
+        <h2 className='h2'>Sci-fi Movies</h2>
+        <div className="secondScroll"> 
       <div className="second">
         {movies.d?movies.d.map((movie, i) => {
           return (
             <div
               key={i}
+              onClick={()=> {
+                setPopUp({...movie})
+                document.querySelector('.popup').style.display = 'flex'
+
+                console.log('this is popUp',popUp)
+              }}
               className="movie1"
               style={{
                 backgroundImage: `url("https://www.themoviedb.org/t/p/original${movie.backdrop_path}")`
@@ -103,6 +151,12 @@ export default function Movies() {
           return (
             <div
               key={i}
+              onClick={()=> {
+                setPopUp({...movie})
+                document.querySelector('.popup').style.display = 'flex'
+
+                console.log('this is popUp',popUp)
+              }}
               className="movie1"
               style={{
                 backgroundImage: `url("https://www.themoviedb.org/t/p/original${movie.backdrop_path}")`
@@ -119,6 +173,12 @@ export default function Movies() {
           return (
             <div
               key={i}
+              onClick={()=> {
+                setPopUp({...movie})
+                document.querySelector('.popup').style.display = 'flex'
+
+                console.log('this is popUp',popUp)
+              }}
               className="movie1"
               style={{
                 backgroundImage: `url("https://www.themoviedb.org/t/p/original${movie.backdrop_path}")`
@@ -135,6 +195,12 @@ export default function Movies() {
           return (
             <div
               key={i}
+              onClick={()=> {
+                setPopUp({...movie})
+                document.querySelector('.popup').style.display = 'flex'
+
+                console.log('this is popUp',popUp)
+              }}
               className="movie1"
               style={{
                 backgroundImage: `url("https://www.themoviedb.org/t/p/original${movie.backdrop_path}")`

@@ -65,7 +65,6 @@ function indexMovie(req, res) {
     .then((rizz) => rizz.json())
     .then((john) => {
       data.g = [...john.results];
-      console.log(data)
       res.json(data)
 
     })
