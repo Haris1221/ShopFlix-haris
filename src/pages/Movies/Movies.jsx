@@ -11,6 +11,7 @@ export default function Movies() {
             const movis = await getMovies()
             setMovies({...movies, a:movis.a, b:movis.b, c:movis.c, d:movis.d, e:movis.e, f:movis.e, g:movis.g})
             console.log(movis)
+            console.log(movies)
             setMovi(movis.a[rands])
             setD(movis.a[rands].overview.slice(0,150))
         }

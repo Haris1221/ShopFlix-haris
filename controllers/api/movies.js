@@ -36,49 +36,38 @@ function indexMovie(req, res) {
     .then((john) => {
       data.a = [...john.results];
     })
-    .then(() => {
-      fetch(url2, options);
-    })
-
+    fetch(url2, options)
     .then((rizz) => rizz.json())
     .then((john) => {
       data.b = [...john.results];
     })
-    .then(() => {
-      fetch(url2, options);
-    })
-    .then((rizz) => rizz.json())
-    .then((john) => {
-      data.b = [...john.results];
-    })
-    .then(() => {
-      fetch(url3, options);
-    })
+    fetch(url3, options)
     .then((rizz) => rizz.json())
     .then((john) => {
       data.c = [...john.results];
     })
-    .then(() => {
-      fetch(url4, options);
-    })
+    fetch(url4, options)
     .then((rizz) => rizz.json())
     .then((john) => {
       data.d = [...john.results];
     })
-    .then(() => {
-      fetch(url5, options);
-    })
+    fetch(url5, options)
     .then((rizz) => rizz.json())
     .then((john) => {
       data.e = [...john.results];
     })
-    .then(() => {
-      fetch(url6, options);
-    })
+    fetch(url6, options)
     .then((rizz) => rizz.json())
     .then((john) => {
       data.f = [...john.results];
+    })
+    fetch(url7, options)
+    .then((rizz) => rizz.json())
+    .then((john) => {
+      data.g = [...john.results];
+      console.log(data)
       res.json(data)
+
     })
     .catch((err) => console.error('error:' + err));
 }
