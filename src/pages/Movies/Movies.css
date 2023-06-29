@@ -107,7 +107,16 @@
     z-index: 2;
     display: none;
     padding: 20px;
-    flex-direction: column;
+    flex-direction: row-reverse;
+   
+}
+.popupImg{
+  display: absolute;
+  z-index: -1;
+  top: 0px;
+  right: 0px;
+  width: 80%;
+  height:100%;
 }
 .movieTitle{
     display: flex;

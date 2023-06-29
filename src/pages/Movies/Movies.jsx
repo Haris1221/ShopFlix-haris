@@ -5,7 +5,8 @@ import { getMovies } from '../../utilities/movies-api';
 function PopUp({popUp}) {
   return(
     <div className='popup'> 
-      <img alt=''/>
+      <img className='popupImg' src={`https://www.themoviedb.org/t/p/original${popUp.backdrop_path}`} alt=''/>
+      <div>
       <div className='movieTitle'>
       <h2> 
       {popUp.title} 
@@ -22,6 +23,7 @@ function PopUp({popUp}) {
       <div className='btnDiv'>
           <button>PLAY</button>
           <button>MY LIST</button>
+      </div>
       </div>
     </div>
   )
