@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function myList({cart}) {
+export default function MyList({cart}) {
     return (
         <div>
             <div>

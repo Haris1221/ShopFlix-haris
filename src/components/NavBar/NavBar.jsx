@@ -17,16 +17,16 @@ export default function NavBar({ user, setUser }) {
       <div className='navItem'>
       
       <Link to="/"><p>🎥  &nbsp; &nbsp; &nbsp; Browse</p></Link>
-      <Link to="/"><p>📈  &nbsp; &nbsp; &nbsp; Trending</p></Link>
-      <Link to="/"><p>👀  &nbsp; &nbsp; &nbsp; Upcoming</p></Link>
-      <Link to="/"><p>🔎  &nbsp; &nbsp; &nbsp; Search</p></Link>
+      <Link to="/trending"><p>📈  &nbsp; &nbsp; &nbsp; Trending</p></Link>
+      <Link to="/upcoming"><p>👀  &nbsp; &nbsp; &nbsp; Upcoming</p></Link>
+      <Link to="/search"><p>🔎  &nbsp; &nbsp; &nbsp; Search</p></Link>
       <Link to="/orders"><p>＋  &nbsp; &nbsp; &nbsp; My List</p></Link>
 
       </div>
       
       
       <div className='navSettings'>
-      <Link to="/" onClick=""><p>Settings</p></Link>
+      <Link to="/setting" onClick=""><p>Settings</p></Link>
       <Link to="" onClick={handleLogOut}><p >Exit Netflix</p></Link>
 
       </div>

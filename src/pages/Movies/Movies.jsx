@@ -30,7 +30,7 @@ function PopUp({popUp}) {
   )
 }
 
-export default function Movies({setCart, cart}) {
+export default function Movies({setCart, cart, setTrending}) {
   const [rands,setRand]=useState(Math.floor(Math.random()*20))
   const [description,setD]=useState('')
   const [movi,setMovi]=useState('')
@@ -40,8 +40,8 @@ export default function Movies({setCart, cart}) {
         async function getMo(){
             const movis = await getMovies()
             setMovies({...movies, a:movis.a, b:movis.b, c:movis.c, d:movis.d, e:movis.e, f:movis.e, g:movis.g})
+            
             console.log(movis)
-            console.log(movies)
             setMovi(movis.a[rands])
             setD(movis.a[rands].overview.slice(0,150))
         }
@@ -54,7 +54,10 @@ export default function Movies({setCart, cart}) {
         getCart()
     },[])
 
-
+    useEffect(()=>{
+      setTrending(movies.a)
+      console.log(movies.a)
+    },[movies])
     async function handleAddOrder(itemId) {
       console.log('handleaddorder called')
       const updatedCart = await ordersAPI.addItemToCart(itemId)
@@ -68,8 +71,9 @@ export default function Movies({setCart, cart}) {
     <div className="App">
       <PopUp popUp = {popUp} handleAddOrder={handleAddOrder}/>
       <div className='movieBanner' style={{backgroundImage: `url("https://www.themoviedb.org/t/p/original${movi.backdrop_path}")`}}>
+      
               <div className='bannertext'>
-                <h1>{movi.title}</h1>
+                <h1 className='bah1'>{movi.title}</h1>
                 <div className='btnDiv'>
                     <button onClick={()=> {
                   console.log('clicked')

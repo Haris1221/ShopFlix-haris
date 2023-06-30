@@ -2,11 +2,17 @@
     position: absolute;
     top: 0;
     display: flex;
+    align-items: center;
     justify-content: space-between;
     width: 100%;
-    padding: 20px;
+    padding: 10px 20px 20px 20px;
     z-index: 3;
     
+}
+.menuBarFlex{
+    display: flex;
+    gap: 20px;
+    align-items: center;
 }
 .navLogo{
     width: 80px;
