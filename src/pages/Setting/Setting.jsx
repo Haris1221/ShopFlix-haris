@@ -1,5 +1,5 @@
 import React from 'react'
-import './Settings.css'
+import './Setting.css'
 export default function Setting() {
   return (
     <div>

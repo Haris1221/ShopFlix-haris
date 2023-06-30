@@ -9,7 +9,7 @@ import MenuBar from '../../components/MenuBar/MenuBar';
 import MyList from '../MyList/MyList';
 import NewOrderPage from '../NewOrderPage/NewOrderPage';
 import Search from '../Search/Search';
-import Kids from '../Kids/kids';
+import Kids from '../Kids/Kids';
 import Setting from '../Setting/Setting';
 import Trending from '../Trending/Trending';
 import Upcoming from '../Upcoming/Upcoming';
