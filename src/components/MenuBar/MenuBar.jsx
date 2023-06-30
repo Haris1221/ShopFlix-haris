@@ -2,6 +2,17 @@ import React from 'react'
 import './MenuBar.css'
 import { Link } from 'react-router-dom';
 export default function MenuBar() {
+  const [red, green, blue] = [69, 111, 225]
+const section1 = document.querySelector('.menuBar')
+
+window.addEventListener('scroll', () => {
+  if(window.scrollY>50){
+  section1.style.backgroundColor = `black`
+  }
+  else{
+    section1.style.backgroundColor = `none`
+  }
+})
   return (
     <div className='menuBar'>
         <Link to='/'><img  className="navLogo" src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg" alt="Netflix Logo"></img></Link>

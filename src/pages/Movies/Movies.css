@@ -103,18 +103,31 @@
   }
 
 .popup {
-    width: 80%;
+    width: 88%;
     height: 80%;
     position: fixed;
     top: 100px;
     left: 100px;
-    background-color: rgba(0, 0, 0, 0.834);
+    background-size: cover;
     z-index: 2;
     display: none;
     padding: 20px;
-    flex-direction: row-reverse;
+    flex-direction: row;
     align-items: center;
    
+}
+.popup::after{
+  content:'';
+  width: 40%;
+    height: 80%;
+  position: fixed;
+    top: 100px;
+    left: 100px;
+  background: linear-gradient(to right, black,rgba(0, 0, 0, 0.967),rgba(0, 0, 0, 0.811),rgba(0, 0, 0, 0.504), rgba(0, 0, 0, 0) );
+  z-index: -1;
+}
+.popTitle{
+  font-size: 30px;
 }
 .popupImg{
   display: absolute;
@@ -126,8 +139,27 @@
 }
 .movieTitle{
     display: flex;
-    justify-content: space-between;
-    width: 100%;
-    align-items: center;
-    font-size: 30px;
+    flex-direction: column;
+    justify-content: center;
+    width: 35%;
+    height: auto;
+    text-align: left;
+    color: white;
+    z-index: 2;
+    /* background: linear-gradient(to right black, rgba(0, 0, 0, 0) ); */
+}
+.exitPopup{
+  display: flex;
+  position: fixed;
+  justify-content: center;
+  align-items: center;
+  top: 110px;
+  right: 110px;
+  background-color: red;
+  color: #e8e6e3;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  
+
 }

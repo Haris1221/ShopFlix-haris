@@ -6,19 +6,15 @@ import {Link} from 'react-router-dom'
 
 function PopUp({popUp}) {
   return(
-    <div className='popup'> 
-      <img className='popupImg' src={`https://www.themoviedb.org/t/p/original${popUp.backdrop_path}`} alt=''/>
+    <div className='popup' style={{backgroundImage:`url("https://www.themoviedb.org/t/p/original${popUp.backdrop_path}")`}}> 
+     
       <div>
       <div className='movieTitle'>
-      <h2> 
+      <h2 className='popTitle'> 
       {popUp.title} 
       </h2>
-      <span onClick={()=>{
-      document.querySelector('.popup').style.display = 'none'
-      }}> 
-      X
-      </span>
-      </div>
+      
+      
       <p className='originalLanguage'>Original Language: {popUp.original_language} &nbsp; &nbsp; {popUp.popularity} &nbsp; &nbsp; Rating: {popUp.vote_average}
       </p>
       <p className='overview'>{popUp.overview}</p>
@@ -26,6 +22,14 @@ function PopUp({popUp}) {
           <button>ADD LIST</button>
           <Link to='/orders'><button>MY LIST</button></Link></div>
       </div>
+      
+      </div>
+
+      <span className='exitPopup' onClick={()=>{
+      document.querySelector('.popup').style.display = 'none'
+      }}> 
+      X
+      </span> 
     </div>
   )
 }
