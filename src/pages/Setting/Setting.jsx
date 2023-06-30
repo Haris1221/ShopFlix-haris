@@ -3,7 +3,7 @@ import './Setting.css'
 export default function Setting() {
   return (
     <div>
-        <h1>Setting</h1>
+        <h1>Settings</h1>
         
     </div>
   )
