@@ -9,6 +9,9 @@
     z-index: 3;
     
 }
+.mm{
+    color: #e8e6e3;
+}
 .menuBarFlex{
     display: flex;
     gap: 20px;
