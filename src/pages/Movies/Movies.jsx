@@ -1,6 +1,8 @@
 import {useEffect,useState} from 'react'
 import './Movies.css'
 import { getMovies } from '../../utilities/movies-api';
+import * as ordersAPI from '../../utilities/orders-api'
+import {Link} from 'react-router-dom'
 
 function PopUp({popUp}) {
   return(
@@ -21,15 +23,14 @@ function PopUp({popUp}) {
       </p>
       <p className='overview'>{popUp.overview}</p>
       <div className='btnDiv'>
-          <button>PLAY</button>
-          <button>MY LIST</button>
-      </div>
+          <button>ADD LIST</button>
+          <Link to='/orders'><button>MY LIST</button></Link></div>
       </div>
     </div>
   )
 }
 
-export default function Movies() {
+export default function Movies({setCart, cart}) {
   const [rands,setRand]=useState(Math.floor(Math.random()*20))
   const [description,setD]=useState('')
   const [movi,setMovi]=useState('')
@@ -46,16 +47,34 @@ export default function Movies() {
         }
         getMo()
 
+        async function getCart() {
+          const carti = await ordersAPI.getCart()
+          setCart([...cart, carti])
+        }   
+        getCart()
     },[])
+
+
+    async function handleAddOrder(itemId) {
+      console.log('handleaddorder called')
+      const updatedCart = await ordersAPI.addItemToCart(itemId)
+      setCart([...cart, updatedCart])
+      console.log('updatedCart', updatedCart)
+      console.log('handle', handleAddOrder)
+    }
+
+
   return (
     <div className="App">
-      <PopUp popUp = {popUp} />
+      <PopUp popUp = {popUp} handleAddOrder={handleAddOrder}/>
       <div className='movieBanner' style={{backgroundImage: `url("https://www.themoviedb.org/t/p/original${movi.backdrop_path}")`}}>
               <div className='bannertext'>
                 <h1>{movi.title}</h1>
                 <div className='btnDiv'>
-                  <button>PLAY</button>
-                  <button>MY LIST</button>
+                    <button onClick={()=> {
+                  console.log('clicked')
+                  handleAddOrder(movi._id)}}>ADD LIST</button>
+                  <Link to='/orders'><button>MY LIST</button></Link>
               </div>
                 <p>{description}...</p>
               </div>

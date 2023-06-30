@@ -3,9 +3,9 @@ const Schema = mongoose.Schema;
 
 
 const categorySchema = new Schema ({
-     index:Number,
-     name:String,
-     category:String,
+        index:Number,
+        name:String,
+        category:String,
 }, {
     timestamps: true
 })
