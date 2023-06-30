@@ -1,12 +1,12 @@
 
 
-const Category = require("./models/categories");
+const Categories = require("./models/categories");
 const Item = require("./models/item");
 
 (async function () {
-  console.log(Category)
-  await Category.deleteMany({});
-  const categori = await Category.create([
+  console.log(Categories)
+  await Categories.deleteMany({});
+  const categori = await Categories.create([
       {
       index: 35,
       name: 'Comedy',
