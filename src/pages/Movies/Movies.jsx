@@ -3,36 +3,7 @@ import './Movies.css'
 import { getMovies } from '../../utilities/movies-api';
 import * as ordersAPI from '../../utilities/orders-api'
 import {Link} from 'react-router-dom'
-
-function PopUp({popUp}) {
-  return(
-    <div className='popup' style={{backgroundImage:`url("https://www.themoviedb.org/t/p/original${popUp.backdrop_path}")`}}> 
-     
-      <div>
-      <div className='movieTitle'>
-      <h2 className='popTitle'> 
-      {popUp.title} 
-      </h2>
-      
-      
-      <p className='originalLanguage'>Original Language: {popUp.original_language} &nbsp; &nbsp; {popUp.popularity} &nbsp; &nbsp; Rating: {popUp.vote_average}
-      </p>
-      <p className='overview'>{popUp.overview}</p>
-      <div className='btnDiv'>
-          <button>ADD LIST</button>
-          <Link to='/orders'><button>MY LIST</button></Link></div>
-      </div>
-      
-      </div>
-
-      <span className='exitPopup' onClick={()=>{
-      document.querySelector('.popup').style.display = 'none'
-      }}> 
-      X
-      </span> 
-    </div>
-  )
-}
+import PopUp from './Popup';
 
 export default function Movies({setCart, cart, setTrending}) {
   const [rands,setRand]=useState(Math.floor(Math.random()*20))
@@ -82,7 +53,7 @@ export default function Movies({setCart, cart, setTrending}) {
                     <button onClick={()=> {
                   console.log('clicked')
                   handleAddOrder(movi._id)}}>ADD LIST</button>
-                  <Link to='/orders'><button>MY LIST</button></Link>
+                  <Link to='/list'><button>MY LIST</button></Link>
               </div>
                 <p>{description}...</p>
               </div>

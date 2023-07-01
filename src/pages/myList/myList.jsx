@@ -1,15 +1,31 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
+import {getList} from '../../utilities/list-api'
 
-export default function MyList({cart}) {
+export default function MyList() {
+    const [list,setList]=useState([])
+    useEffect(()=>{
+        (async()=>{
+            const movi = await getList()
+            console.log(movi)
+            console.log(movi)
+            setList(movi)
+        })()
+        console.log(list)
+        
+    },[])
     return (
         <div>
-            <div>
-                {cart.lineItem.map((movie, i) => (
-                    <p className='myList' key={i} style={{backgroundImage: `url("https://www.themoviedb.org/t/p/original${movie.backdrop_path}")`}}>
-                        {movie} 
-                    </p>
-                ))}
-            </div>
+            <h1>My List</h1>
+            <div className='UpcomingWrapper'>
+                
+                
+                {list.map((elem,i)=>{
+                    return <div key={i} className='movie1' style={{backgroundImage: `url("https://www.themoviedb.org/t/p/original${elem.items.backdrop_path}")`}}>
+    
+    {elem.items.name}
+                    </div>
+                })
+                }</div>
         </div>
-    )
+      )
 }

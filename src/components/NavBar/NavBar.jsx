@@ -20,7 +20,7 @@ export default function NavBar({ user, setUser }) {
       <Link to="/trending"><p>📈  &nbsp; &nbsp; &nbsp; Trending</p></Link>
       <Link to="/upcoming"><p>👀  &nbsp; &nbsp; &nbsp; Upcoming</p></Link>
       <Link to="/search"><p>🔎  &nbsp; &nbsp; &nbsp; Search</p></Link>
-      <Link to="/orders"><p>＋  &nbsp; &nbsp; &nbsp; My List</p></Link>
+      <Link to="/list"><p>＋  &nbsp; &nbsp; &nbsp; My List</p></Link>
 
       </div>
       

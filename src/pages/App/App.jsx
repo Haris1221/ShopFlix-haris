@@ -16,7 +16,6 @@ import Upcoming from '../Upcoming/Upcoming';
 export default function App() {
   const [trending, setTrending]= useState([])
   const [user, setUser] = useState(getUser());
-  const [cart, setCart] = useState([])
   return (
     <main className="">
       { user ?
@@ -24,8 +23,8 @@ export default function App() {
             <MenuBar/>
             <NavBar user={user} setUser={setUser} />
             <Routes>
-              <Route path='/' element={<Movies setCart={setCart} cart={cart} setTrending={setTrending}/>}/>
-              <Route path='/orders' element={<MyList cart={cart}/>}/>
+              <Route path='/' element={<Movies  setTrending={setTrending}/>}/>
+              <Route path='/list' element={<MyList />}/>
               <Route path='/trending' element={<Trending movies={trending}/>}/>
               <Route path='/upcoming' element={<Upcoming />}/>
               <Route path='/search' element={<Search/>}/>

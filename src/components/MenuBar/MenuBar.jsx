@@ -13,7 +13,7 @@ useEffect(()=>{
       section1.style.backgroundColor = `rgba(0, 0, 0, 0)`
     }
   })
-},[])
+})
 
   return (
     <div className='menuBar'>
