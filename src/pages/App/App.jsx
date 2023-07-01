@@ -6,7 +6,7 @@ import AuthPage from '../AuthPage/AuthPage';
 import NavBar from '../../components/NavBar/NavBar';
 import Movies from '../Movies/Movies'
 import MenuBar from '../../components/MenuBar/MenuBar';
-import MyList from '../MyList/MyList';
+import MyList from '../myList/myList';
 import NewOrderPage from '../NewOrderPage/NewOrderPage';
 import Search from '../Search/Search';
 import Kids from '../Kids/Kids';
