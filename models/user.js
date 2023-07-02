@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 const bcrypt = require('bcrypt');
+const { string } = require('prop-types');
 
 const orderSchema = new Schema ({
   movie: {
@@ -27,6 +28,7 @@ const userSchema = new Schema({
     type: String,
     required: true
   },
+  profilePic:{type:String, default:"https://mir-s3-cdn-cf.behance.net/project_modules/disp/84c20033850498.56ba69ac290ea.png",require:true},
   order: [orderSchema]
 }, {
   timestamps: true,
@@ -45,4 +47,4 @@ userSchema.pre('save', async function(next) {
   this.password = await bcrypt.hash(this.password, SALT_ROUNDS);
 });
 
-module.exports = mongoose.model('User', userSchema);
+module.exports = mongoose.model('loggedUser', userSchema);

@@ -6,11 +6,8 @@ export default function Kids() {
     useEffect(()=>{
         async function getMo(){
             const movis = await getMovies()
-            setMovies(movis.a)
-            
-            // console.log(movis)
-            // setMovi(movis.a[rands])
-            // setD(movis.a[rands].overview.slice(0,150))
+            setMovies(movis.g)
+         
         }
         getMo()
     },[])

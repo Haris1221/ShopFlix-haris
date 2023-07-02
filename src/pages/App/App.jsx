@@ -20,7 +20,7 @@ export default function App() {
     <main className="">
       { user ?
           <>
-            <MenuBar/>
+            <MenuBar user={user}/>
             <NavBar user={user} setUser={setUser} />
             <Routes>
               <Route path='/' element={<Movies  setTrending={setTrending}/>}/>
@@ -29,7 +29,7 @@ export default function App() {
               <Route path='/upcoming' element={<Upcoming />}/>
               <Route path='/search' element={<Search/>}/>
               <Route path='/kids' element={<Kids/>}/>
-              <Route path='/setting' element={<Setting/>}/>
+              <Route path='/setting' element={<Setting/>} setUser={setUser}/>
               <Route path="/orders/new" element={<NewOrderPage />} />
 
               {/* Route components in here */}
@@ -38,7 +38,7 @@ export default function App() {
             </Routes>
           </>
           :
-          <AuthPage setUser={setUser} />
+          <AuthPage setUser={setUser} user={user}/>
       }
     </main>
   );

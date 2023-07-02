@@ -1,17 +1,19 @@
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
-const User = require('../../models/user');
+const loggedUser = require('../../models/user');
 
 module.exports = {
   create,
   login,
-  checkToken
+  checkToken,
+  edit
 };
 
 async function create(req, res) {
   try {
     // Add the user to the db
-    const user = await User.create(req.body);
+    req.body.profilePic="https://mir-s3-cdn-cf.behance.net/project_modules/disp/84c20033850498.56ba69ac290ea.png"
+    const user = await loggedUser.create(req.body);
     const token = createJWT(user);
     res.json(token);
   } catch (err) {
@@ -21,7 +23,7 @@ async function create(req, res) {
 
 async function login(req, res) {
   try {
-    const user = await User.findOne({email: req.body.email});
+    const user = await loggedUser.findOne({email: req.body.email});
     if (!user) throw new Error();
     const match = await bcrypt.compare(req.body.password, user.password);
     if (!match) throw new Error();
@@ -47,4 +49,24 @@ function createJWT(user) {
     process.env.SECRET,
     { expiresIn: '24h' }
   );
+}
+
+async function edit(req, res) {
+  try {
+    // Add the user to the db
+    console.log(req.body)
+    console.log(req.user._id)
+    loggedUser.findById(req.user._id)
+    .then((userDoc)=>{
+      console.log(userDoc)
+      userDoc.profilePic=req.body.profilePic
+      userDoc.name=req.body.name
+      console.log(userDoc)
+      userDoc.save()
+      res.status(200)
+    })
+    .catch((error=>{console.log(error)}))
+  } catch (err) {
+    res.status(400).json(err);
+  }
 }

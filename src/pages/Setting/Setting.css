@@ -1,0 +1,14 @@
+.profilePic{
+    width: 50px;
+    height: 50px;
+}
+select{
+    width:400px;
+    height: 800px;
+
+}
+option{
+    height:100px;
+    width: 100px;
+    background-color: aquamarine;
+}

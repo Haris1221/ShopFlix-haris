@@ -13,6 +13,10 @@
     color: rgb(229, 229, 229);
     padding: 40px 0 40px 70px; 
     display: none;
+    transition-property: width;
+            transition-duration: 2s;
+            transition-timing-function: ease-in-out;
+            transition-delay: 1s;
 }
 .menuProfile{
     display: flex;

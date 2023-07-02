@@ -4,6 +4,7 @@ import { getMovies } from '../../utilities/movies-api';
 import * as ordersAPI from '../../utilities/orders-api'
 import {Link} from 'react-router-dom'
 import PopUp from './Popup';
+import {motion} from 'framer-motion'
 
 export default function Movies({setCart, cart, setTrending}) {
   const [rands,setRand]=useState(Math.floor(Math.random()*20))
@@ -11,6 +12,7 @@ export default function Movies({setCart, cart, setTrending}) {
   const [movi,setMovi]=useState('')
   const [movies, setMovies]= useState({})
   const [popUp, setPopUp] = useState({})
+  const [digit,setDigit]=useState(0)
     useEffect(()=>{
         async function getMo(){
             const movis = await getMovies()
@@ -19,6 +21,7 @@ export default function Movies({setCart, cart, setTrending}) {
             console.log(movis)
             setMovi(movis.a[rands])
             setD(movis.a[rands].overview.slice(0,150))
+            setDigit(1)
         }
         getMo()
 
@@ -33,6 +36,13 @@ export default function Movies({setCart, cart, setTrending}) {
       setTrending(movies.a)
       console.log(movies.a)
     },[movies])
+
+    useEffect(()=>{
+      if(movies.a===undefined && digit===1){
+      window.location.reload()
+  }
+},[])
+
     async function handleAddOrder(itemId) {
       console.log('handleaddorder called')
       const updatedCart = await ordersAPI.addItemToCart(itemId)
@@ -44,15 +54,19 @@ export default function Movies({setCart, cart, setTrending}) {
 
   return (
     <div className="App">
+      
       <PopUp popUp = {popUp} handleAddOrder={handleAddOrder}/>
+      
       <div className='movieBanner' style={{backgroundImage: `url("https://www.themoviedb.org/t/p/original${movi.backdrop_path}")`}}>
       
               <div className='bannertext'>
                 <h1 className='bah1'>{movi.title}</h1>
                 <div className='btnDiv'>
                     <button onClick={()=> {
-                  console.log('clicked')
-                  handleAddOrder(movi._id)}}>ADD LIST</button>
+                setPopUp({...movi})
+                document.querySelector('.popup').style.display = 'flex'
+                console.log('this is popUp',popUp)
+              }}>ADD LIST</button>
                   <Link to='/list'><button>MY LIST</button></Link>
               </div>
                 <p>{description}...</p>
@@ -64,7 +78,11 @@ export default function Movies({setCart, cart, setTrending}) {
       <div className="first">
         {movies.a?movies.a.map((movie, i) => {
           return (
-            <div
+            <motion.div
+            transition={{delay:0.3*i}}
+            initial={{opacity:0,delay:0.1*i}}
+            animate={{opacity:1,delay:0.1*i}}
+            exit={{opacity:0,delay:0.1*i}}
               key={i}
               onClick={()=> {
                 setPopUp({...movie})
@@ -85,7 +103,11 @@ export default function Movies({setCart, cart, setTrending}) {
       <div className="second">
         {movies.b?movies.b.map((movie, i) => {
           return (
-            <div
+            <motion.div
+            transition={{delay:0.3*i}}
+            initial={{opacity:0,delay:0.1*i}}
+            animate={{opacity:1,delay:0.1*i}}
+            exit={{opacity:0,delay:0.1*i}}
               key={i} 
               onClick={()=> {
                 setPopUp({...movie})
@@ -106,7 +128,11 @@ export default function Movies({setCart, cart, setTrending}) {
       <div className="second">
         {movies.c?movies.c.map((movie, i) => {
           return (
-            <div
+            <motion.div
+            transition={{delay:0.3*i}}
+            initial={{opacity:0,delay:0.1*i}}
+            animate={{opacity:1,delay:0.1*i}}
+            exit={{opacity:0,delay:0.1*i}}
               key={i}
               onClick={()=> {
                 setPopUp({...movie})
@@ -127,7 +153,11 @@ export default function Movies({setCart, cart, setTrending}) {
       <div className="second">
         {movies.d?movies.d.map((movie, i) => {
           return (
-            <div
+            <motion.div
+            transition={{delay:0.3*i}}
+            initial={{opacity:0,delay:0.1*i}}
+            animate={{opacity:1,delay:0.1*i}}
+            exit={{opacity:0,delay:0.1*i}}
               key={i}
               onClick={()=> {
                 setPopUp({...movie})
@@ -149,7 +179,11 @@ export default function Movies({setCart, cart, setTrending}) {
       <div className="second">
         {movies.e?movies.e.map((movie, i) => {
           return (
-            <div
+            <motion.div
+            transition={{delay:0.3*i}}
+            initial={{opacity:0,delay:0.1*i}}
+            animate={{opacity:1,delay:0.1*i}}
+            exit={{opacity:0,delay:0.1*i}}
               key={i}
               onClick={()=> {
                 setPopUp({...movie})
@@ -171,7 +205,11 @@ export default function Movies({setCart, cart, setTrending}) {
       <div className="second">
         {movies.f?movies.f.map((movie, i) => {
           return (
-            <div
+            <motion.div
+            transition={{delay:0.3*i}}
+            initial={{opacity:0,delay:0.1*i}}
+            animate={{opacity:1,delay:0.1*i}}
+            exit={{opacity:0,delay:0.1*i}}
               key={i}
               onClick={()=> {
                 setPopUp({...movie})
@@ -193,7 +231,11 @@ export default function Movies({setCart, cart, setTrending}) {
       <div className="second">
         {movies.g?movies.g.map((movie, i) => {
           return (
-            <div
+            <motion.div
+            transition={{delay:0.3*i}}
+            initial={{opacity:0,delay:0.1*i}}
+            animate={{opacity:1,delay:0.1*i}}
+            exit={{opacity:0,delay:0.1*i}}
               key={i}
               onClick={()=> {
                 setPopUp({...movie})

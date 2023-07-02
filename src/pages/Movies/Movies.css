@@ -114,6 +114,10 @@
     padding: 20px;
     flex-direction: row;
     align-items: center;
+            transition-property: width,height;
+            transition-duration: 7s;
+            transition-timing-function: ease-in-out;
+            transition-delay: 1s;
    
 }
 .popup::after{

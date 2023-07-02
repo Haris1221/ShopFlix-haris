@@ -3,11 +3,12 @@ import {getMovies} from '../../utilities/movies-api'
 import './Upcoming.css'
 export default function Upcoming() {
     const [movies, setMovies]= useState([])
+    const [d,setD]=useState(0)
     useEffect(()=>{
         async function getMo(){
             const movis = await getMovies()
             setMovies(movis.b)
-            
+            setD(1)
             // console.log(movis)
             // setMovi(movis.a[rands])
             // setD(movis.a[rands].overview.slice(0,150))
@@ -15,6 +16,11 @@ export default function Upcoming() {
         getMo()
     },[])
     console.log(movies)
+    useEffect(()=>{
+        if(movies.length<1 && d===1){
+        window.location.reload()
+    }
+},[movies])
   return (
     <div>
         <h1>Upcoming</h1>

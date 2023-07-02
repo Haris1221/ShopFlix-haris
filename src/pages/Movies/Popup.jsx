@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { addList } from '../../utilities/list-api'
+import {motion} from 'framer-motion'
 export default function PopUp({popUp}) {
 const [listState,setList] = useState ({})
 
 function handleClick(e){
-    e.preventDefault()
     async function getMo(){
             const movis = await addList({
                 name: popUp.title,
@@ -29,7 +29,9 @@ function handleClick(e){
 
 
   return(
-    <div className='popup' style={{backgroundImage:`url("https://www.themoviedb.org/t/p/original${popUp.backdrop_path}")`}}> 
+    <div
+    
+    className='popup' style={{backgroundImage:`url("https://www.themoviedb.org/t/p/original${popUp.backdrop_path}")`}}> 
      
       <div>
       <div className='movieTitle'>
@@ -42,7 +44,7 @@ function handleClick(e){
       </p>
       <p className='overview'>{popUp.overview}</p>
       <div className='btnDiv'>
-          <button onClick={handleClick}>ADD LIST</button>
+      <Link to='/list'><button onClick={handleClick}>ADD LIST</button></Link>
           <Link to='/list'><button>MY LIST</button></Link></div>
       </div>
       
