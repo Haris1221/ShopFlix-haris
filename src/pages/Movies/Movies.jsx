@@ -16,7 +16,7 @@ export default function Movies({setCart, cart, setTrending}) {
     useEffect(()=>{
         async function getMo(){
             const movis = await getMovies()
-            setMovies({...movies, a:movis.a, b:movis.b, c:movis.c, d:movis.d, e:movis.e, f:movis.e, g:movis.g})
+            setMovies({...movies, a:movis.a, b:movis.b, c:movis.c, d:movis.d, e:movis.e, f:movis.f, g:movis.g})
             
             console.log(movis)
             setMovi(movis.a[rands])
@@ -174,7 +174,7 @@ export default function Movies({setCart, cart, setTrending}) {
         }):<></>}
       </div>
       </div>
-      <h2 className='h2'>Action Movies</h2>
+      <h2 className='h2'>Crime and Horror</h2>
       <div className="secondScroll"> 
       <div className="second">
         {movies.e?movies.e.map((movie, i) => {
@@ -200,7 +200,7 @@ export default function Movies({setCart, cart, setTrending}) {
         }):<></>}
       </div>
       </div>
-      <h2 className='h2'>Comedy Movies</h2>
+      <h2 className='h2'>Action and Adventure</h2>
       <div className="secondScroll"> 
       <div className="second">
         {movies.f?movies.f.map((movie, i) => {
@@ -226,7 +226,7 @@ export default function Movies({setCart, cart, setTrending}) {
         }):<></>}
       </div>
       </div>
-      <h2 className='h2'>Horror Movies</h2>
+      <h2 className='h2'>Family and Fantasy</h2>
       <div className="secondScroll"> 
       <div className="second">
         {movies.g?movies.g.map((movie, i) => {

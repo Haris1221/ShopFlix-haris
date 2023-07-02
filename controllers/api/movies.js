@@ -19,17 +19,17 @@ function indexMovie(req, res) {
     },
   };
   const url2 =
-    'https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=2&sort_by=popularity.desc';
+  'https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1'  
   const url3 =
-    'https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=3&sort_by=popularity.desc';
+  'https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1'
   const url4 =
-    'https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=4&sort_by=popularity.desc';
+  'https://api.themoviedb.org/3/movie/upcoming?language=en-US&page=1'
   const url5 =
-    'https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&with_genres=action&sort_by=popularity.desc';
+  'https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&with_genres=27%2C80'
   const url6 =
-    'https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&with_genres=comedy';
+  'https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&with_genres=28%2C12';
   const url7 =
-    'https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&certification_country=US&certification.lte=PG&with_genres=PG&include_adult=false&sort_by=popularity.desc';
+    'https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&certification_country=US&certification.lte=PG&with_genres=PG%2c16%2C10751%2C14&include_adult=false&sort_by=popularity.desc';
 
     
     

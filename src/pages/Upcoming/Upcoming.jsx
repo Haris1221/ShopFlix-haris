@@ -7,7 +7,7 @@ export default function Upcoming() {
     useEffect(()=>{
         async function getMo(){
             const movis = await getMovies()
-            setMovies(movis.b)
+            setMovies(movis.d)
             setD(1)
             // console.log(movis)
             // setMovi(movis.a[rands])

@@ -12,3 +12,40 @@ option{
     width: 100px;
     background-color: aquamarine;
 }
+.editForm{
+    margin-left:20px ;
+}
+.userName{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.userNameInput{
+    background-color: rgba(255, 0, 0, 0.731);
+    border: none;
+    width: 590px;
+    padding: 20px;
+    height: 40px;
+}
+.profilDiv{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+.profilPic{
+    display: flex;
+    gap:10px
+}
+.btn-edit{
+    background-color: rgba(255, 0, 0, 0.798);
+    border: none;
+    color: white;
+    width: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 25px;
+}
