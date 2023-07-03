@@ -14,9 +14,11 @@
     padding: 40px 0 40px 70px; 
     display: none;
     transition-property: width;
-            transition-duration: 2s;
-            transition-timing-function: ease-in-out;
+            transition-duration: 100s;
+            
             transition-delay: 1s;
+            transition-timing-function:cubic-bezier(0.39, 0.58, 0.57, 1);
+            font-size: 28px;
 }
 .menuProfile{
     display: flex;

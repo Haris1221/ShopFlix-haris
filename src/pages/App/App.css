@@ -25,6 +25,7 @@ h1{
 .auth{
   background-image: url('https://assets.nflxext.com/ffe/siteui/vlv3/d282a426-b01a-424c-9b83-2c2445e4b61a/ffe925ad-8290-400c-b125-6fe8fd9469a5/US-en-20230626-popsignuptwoweeks-perspective_alpha_website_large.jpg');
   background-size: cover;
+  background-position: center; 
   height: 100vh;
   width: 100vw;
   font-size: 26px;
@@ -80,4 +81,19 @@ h1{
   width: 131px;
   height: 50px;
   font-size: 20px;
+}
+.movie {
+  background-size: cover;
+  background-position: center; 
+  width: 400px;
+  height:600px;
+   
+}
+
+.movie1 {
+ 
+  background-size: cover;
+  background-position: center; 
+  width: 600px;
+  height: 340px;
 }

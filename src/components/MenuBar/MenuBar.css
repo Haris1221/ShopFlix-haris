@@ -7,6 +7,7 @@
     width: 100%;
     padding: 10px 20px 10px 20px;
     z-index: 3;
+    font-size: 28px;
     
 }
 .mm{
@@ -18,11 +19,11 @@
     align-items: center;
 }
 .navLogo{
-    width: 80px;
-    height: 20px;
+    width: 120px;
+    height: 60px;
 
 }
 .navAvatar{
-    width: 30px;
-    height: 30px;
+    width: 60px;
+    height: 60px;
 }
