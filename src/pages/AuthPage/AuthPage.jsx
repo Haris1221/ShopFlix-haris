@@ -7,7 +7,11 @@ export default function AuthPage({ setUser }) {
   return (
     <main className='auth'>
       <div className='login'>
+      {showSignUp ? 
+      <h1 className='he'>Sign up now</h1>
+      :
       <h1 className='he'>Sign in</h1>
+        }
       
       { showSignUp ?
           <SignUpForm setUser={setUser} />
